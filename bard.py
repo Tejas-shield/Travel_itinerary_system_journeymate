@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 
 # Load the environment variables
-palm_api_key = "AIzaSyDjzUAnqWsoCga_b4MR0pBc0mx2wEjhyWo"
+palm_api_key = "Your Api key"
 
 
 # Create a config.
@@ -16,4 +16,5 @@ model = palm.GenerativeModel(model_name="gemini-1.5-flash-8b-exp-0924")
 def generate_itinerary(source, destination, start_date, end_date, no_of_day):
     prompt = f"Generate a personalized trip itinerary for a {no_of_day}-day trip from {source} to {destination} on {start_date} to {end_date}, with an optimum budget (Currency:INR)."
     response = model.generate_content(prompt)
+
     return(response.text)
